@@ -8,7 +8,7 @@ namespace CretaceousPark.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class AnimalsController : Controller
+  public class AnimalsController : ControllerBase
   {
     private readonly CretaceousParkContext _db;
 

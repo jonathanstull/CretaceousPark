@@ -20,7 +20,9 @@ namespace CretaceousPark
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CretaceousParkContext>(opt => opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+
+            services.AddDbContext<CretaceousParkContext>(opt =>
+                opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
         }
 
@@ -32,7 +34,7 @@ namespace CretaceousPark
                 app.UseDeveloperExceptionPage();
             }
 
-            // app.UseHttpsRedirection(); commented out during development
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
